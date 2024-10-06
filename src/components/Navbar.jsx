@@ -11,7 +11,7 @@ export default function AppNavbar() {
     <FlowbiteNavbar fluid rounded className={`shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600'}`}>
       <FlowbiteNavbar.Brand href="/">
         <img
-          src="/public/WhatsApp Image 2024-10-06 at 09.04.52_bc510686.jpg" // Adjust your logo image path
+          src="https://i.ibb.co/NNPvnGQ/Whats-App-Image-2024-10-06-at-09-04-52-bc510686.jpg" // Adjust your logo image path
           className="mr-3 h-10 sm:h-12 rounded-full hover:transition duration-300 transform hover:scale-105"
           alt="NutriScan Logo"
         />

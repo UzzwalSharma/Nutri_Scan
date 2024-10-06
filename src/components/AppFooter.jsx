@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="mb-6 md:mb-0">
             <img
-              src="https://ibb.co/Sm8j7ZW"
+              src="https://i.ibb.co/NNPvnGQ/Whats-App-Image-2024-10-06-at-09-04-52-bc510686.jpg"
               alt="NutriScan Logo"
               className="h-40 mb-4 rounded-lg"
             />
