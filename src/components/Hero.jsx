@@ -31,7 +31,7 @@ function Hero() {
       {/* Image Section */}
       <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center lg:justify-end">
         <img
-          src="/public/pexels-marcus-aurelius-9789494.jpg" // Adjust the path if needed
+          src="https://ibb.co/DKM4FjX" // Adjust the path if needed
           alt="Healthy Food"
           className="w-80 lg:w-96 h-auto rounded-lg shadow-2xl transform transition duration-300 hover:scale-105"
         />
