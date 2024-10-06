@@ -1,0 +1,10 @@
+.image-upload {
+    margin: 20px 0;
+  }
+  
+  .image-preview img {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  

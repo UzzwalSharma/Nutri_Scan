@@ -4,6 +4,7 @@ import Home from './components/Home'; // Importing the Home component
 import Navbar from './components/Navbar'; // Assuming you have your Navbar with dark mode logic
 import { DarkModeProvider } from './components/DarkModeContext'; // Context for dark mode
 import  Footer  from '/src/components/AppFooter.jsx'; 
+import NutriScan from '/src/components/NutriScan';
 function App() {
   return (
     <DarkModeProvider>
@@ -11,6 +12,8 @@ function App() {
         <Navbar /> {/* Navbar will always be displayed */}
         <Routes>
           <Route path="/" element={<Home />} /> {/* Home route */}
+          <Route path="/nutriscan" element={<NutriScan />} />
+
         </Routes>
         <Footer/>
       </Router>

@@ -23,9 +23,10 @@ function Hero() {
         <p className="text-lg lg:text-xl text-white mb-8 max-w-2xl mx-auto lg:mx-0">
           Scan your food to get detailed information about its nutritional value, calories, and health benefits. Stay healthy with personalized diet plans!
         </p>
-        <button className="bg-yellow-300 text-indigo-600 px-8 py-4 font-semibold rounded-full shadow-md hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+       <a href="/nutriscan"> <button className="bg-yellow-300 text-indigo-600 px-8 py-4 font-semibold rounded-full shadow-md hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
           Get Started
         </button>
+        </a>
       </div>
 
       {/* Image Section */}
