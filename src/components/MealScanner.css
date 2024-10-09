@@ -1,0 +1,195 @@
+.scanner-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff; /* White background for the main container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.capture-button, .submit-button, .cancel-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.capture-button:hover, .submit-button:hover, .cancel-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.popup p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.popup input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.popup input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.popup button.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup button.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.popup button.cancel-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup button.cancel-button:hover {
+    background-color: #e60000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.meal-results {
+    margin-top: 20px;
+}
+
+.swipe-container {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 10px 0; /* Padding for top and bottom */
+    gap: 20px; /* Space between meal items */
+}
+
+.meal-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    width: 200px; /* Set a fixed width for meal items */
+    text-align: center;
+    background: #f0f0f0; /* Background for meal item */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s; /* Animation effect */
+}
+
+.meal-item:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.meal-image {
+    width: 100%; /* Set the image width to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+.meal-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.spinner {
+    border: 8px solid #f3f3f3; /* Light gray */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px; /* Size of the spinner */
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: auto; /* Centering the spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Height for loading container */
+}
+.fullscreen-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.fullscreen-spinner p {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+

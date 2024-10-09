@@ -28,17 +28,17 @@ const ImageUpload = ({ onImageUpload }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-white shadow-md rounded-lg max-w-lg mx-auto">
+    <div className="flex flex-col items-center justify-center p-6 bg-white shadow-lg rounded-lg max-w-lg mx-auto transition-transform duration-200 transform hover:scale-105">
       {/* Toggle between file upload and camera */}
       <div className="flex space-x-4 mb-4">
-        <button
+        {/* <button
           className={`px-4 py-2 rounded-lg shadow-lg transition duration-200 ease-in-out ${
             useCamera ? 'bg-gray-200' : 'bg-blue-500 text-white'
           }`}
           onClick={() => setUseCamera(false)}
         >
           Upload Image
-        </button>
+        </button> */}
         <button
           className={`px-4 py-2 rounded-lg shadow-lg transition duration-200 ease-in-out ${
             useCamera ? 'bg-blue-500 text-white' : 'bg-gray-200'
@@ -78,7 +78,7 @@ const ImageUpload = ({ onImageUpload }) => {
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            className="w-full h-64 rounded-lg shadow-md mb-4"
+            className="w-full h-64 rounded-lg shadow-md mb-4 border border-gray-300"
           />
           <button
             onClick={captureImage}
@@ -92,7 +92,7 @@ const ImageUpload = ({ onImageUpload }) => {
       {/* Display Image Preview */}
       {preview && (
         <div className="mt-4 relative">
-          <div className="relative overflow-hidden w-64 h-64 border border-gray-200 rounded-lg shadow-lg">
+          <div className="relative overflow-hidden w-64 h-64 border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
             <img
               src={preview}
               alt="Uploaded"
