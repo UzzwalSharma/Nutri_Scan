@@ -6,6 +6,7 @@ import { DarkModeProvider } from './components/DarkModeContext'; // Context for 
 import  Footer  from '/src/components/AppFooter.jsx'; 
 import NutriScan from '/src/components/NutriScan';
 import SkinScanner from './components/SkinScanner';
+import Chat from './components/Chat';
 function App() {
   return (
     <DarkModeProvider>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} /> {/* Home route */}
           <Route path="/nutriscan" element={<NutriScan />} />
           <Route path="/scanner" element={<SkinScanner/>} />
+          <Route path="/Chat" element={<Chat/>} />
 
         </Routes>
         <Footer/>
