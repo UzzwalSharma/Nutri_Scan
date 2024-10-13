@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-import { Picker } from 'emoji-mart';
-import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from '@emoji-mart/react';
+import '@emoji-mart/react/css/emoji-mart.css';
+
 import './Chat.css';
 
 const socket = io('http://localhost:5000'); // Connect to the backend
