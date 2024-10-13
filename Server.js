@@ -16,7 +16,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://nutriscan-nu.vercel.app/',  // Allow all origins for simplicity; restrict this in production
+    origin: '*',  // Allow all origins for simplicity; restrict this in production
     methods: ['GET', 'POST']
   }
 });
