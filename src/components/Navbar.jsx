@@ -3,10 +3,10 @@ import { Avatar, Dropdown, Navbar as FlowbiteNavbar } from 'flowbite-react';
 import DbBtn from '/src/components/Dbbtn.jsx'; // Import your DbBtn component
 import React from 'react'; 
 import { useDarkMode } from './DarkModeContext.jsx';  // Import useDarkMode from the context
-
+import { SignOutButton , useAuth ,SignInButton } from '@clerk/clerk-react';
 export default function AppNavbar() {
   const { isDarkMode, setIsDarkMode } = useDarkMode(); // Access the context state
-
+  const { isSignedIn } = useAuth();
   return (
     <FlowbiteNavbar fluid rounded className={`shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600'}`}>
       <FlowbiteNavbar.Brand href="/">
@@ -29,7 +29,7 @@ export default function AppNavbar() {
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Item>Earnings</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item><SignOutButton /></Dropdown.Item>
         </Dropdown>
         <FlowbiteNavbar.Toggle />
         <div>
@@ -37,7 +37,7 @@ export default function AppNavbar() {
         </div>
       </div>
       <FlowbiteNavbar.Collapse>
-        <FlowbiteNavbar.Link href="#" active className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+        <FlowbiteNavbar.Link href="/" active className="text-white hover:text-yellow-300 transition duration-300 text-xl">
           Home
         </FlowbiteNavbar.Link>
         <FlowbiteNavbar.Link href="#about" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
@@ -47,10 +47,22 @@ export default function AppNavbar() {
           Services
         </FlowbiteNavbar.Link>
         <FlowbiteNavbar.Link href="#pricing" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
-          Pricing
+        {isSignedIn ? (
+         
+            <SignOutButton>
+              <button className="text-white hover:text-yellow-300 transition duration-300 text-xl">Sign Out</button>
+            </SignOutButton>
+      
+        ) : (
+        
+            <SignInButton>
+              <button className="text-white hover:text-yellow-300 transition duration-300 text-xl">Sign In</button>
+            </SignInButton>
+       
+        )}
         </FlowbiteNavbar.Link>
-        <FlowbiteNavbar.Link href="#contact" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
-          Contact
+        <FlowbiteNavbar.Link href="/profile" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+          Manage Profile
         </FlowbiteNavbar.Link>
         
         {/* Add the DbBtn to the navbar */}

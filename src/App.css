@@ -1,0 +1,21 @@
+/* Reset margins and paddings for body */
+
+  
+  /* General styles to center content */
+  .clerk-component-class {
+    /* Your custom styles */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+  }
+  
+  
+  .div {
+    width: 100%; /* Ensure the div takes full width */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    background-color: aqua;
+  }
+  
