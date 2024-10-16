@@ -44,7 +44,7 @@ function App() {
         <Toaster /> {/* Toaster for notifications */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/nutriscan" element={<NutriScan />} />
+          {/* <Route path="/nutriscan" element={<NutriScan />} /> */}
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
 
@@ -65,6 +65,16 @@ function App() {
               <ProtectedRoute>
                 <div className="center-container">
                   <SkinScanner />
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/nutriscan"
+            element={
+              <ProtectedRoute>
+                <div className="center-container">
+                  <NutriScan />
                 </div>
               </ProtectedRoute>
             }
