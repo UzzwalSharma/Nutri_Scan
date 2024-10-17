@@ -58,7 +58,7 @@ function Hero() {
       {/* Image Section */}
       <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center lg:justify-end">
         <img
-          src="https://i.ibb.co/QmH9VxB/pexels-plann-2999237-4565778.jpg" // Adjust the path if needed
+          src="https://i.ibb.co/QmH9VxB/pexels-plann-2999237-4565778.jpg" 
           alt="Healthy Food"
           className="w-80 lg:w-96 h-auto rounded-lg shadow-2xl transform transition duration-300 hover:scale-105"
         />

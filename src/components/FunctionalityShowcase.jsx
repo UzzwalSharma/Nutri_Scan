@@ -7,32 +7,32 @@ const FunctionalityShowcase = () => {
     {
       title: "Personalized Diet Plans",
       description: "Receive customized meal plans tailored to your dietary needs and preferences.",
-      icon: "🍏", // You can use an icon or image here
+      icon: "🍏", 
     },
     {
       title: "Calorie Tracking",
       description: "Easily track your daily calorie intake and monitor your nutritional goals.",
-      icon: "📊", // Replace with a suitable icon
+      icon: "📊",
     },
     {
       title: "Health Insights",
       description: "Get insights into how different foods affect your body and health.",
-      icon: "🔍", // Replace with a suitable icon
+      icon: "🔍", 
     },
     {
       title: "Disease Prevention",
       description: "Discover foods that can help prevent diseases based on your body's needs.",
-      icon: "🛡️", // Replace with a suitable icon
+      icon: "🛡️", 
     },
     {
       title: "Ingredient Substitutes",
       description: "Find alternatives for ingredients that suit your dietary restrictions.",
-      icon: "🌱", // Replace with a suitable icon
+      icon: "🌱", 
     },
     {
       title: "Custom Recommendations",
       description: "Receive tailored recommendations based on your body study and preferences.",
-      icon: "⭐", // Replace with a suitable icon
+      icon: "⭐", 
     },
   ];
 

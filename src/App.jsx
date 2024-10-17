@@ -45,7 +45,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/nutriscan" element={<NutriScan />} /> */}
-          <Route path="/login" element={<SignIn />} />
+          <Route path="/login" element={
+            <div style={{display:"flex"
+              , alignItems:"center" , justifyContent:"center" , margin:"50px"
+            }}>
+            <SignIn />
+            
+            </div> } />
           <Route path="/signup" element={<SignUp />} />
 
           {/* Protected route for profile */}
