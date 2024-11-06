@@ -72,6 +72,11 @@ const Footer = () => {
             </a>
           </div>
         </div>
+
+        {/* Made with Heart Section */}
+        <div className="mt-6 text-center text-gray-400 text-lg md:text-2xl font-semibold animate-pulse">
+          <p className="text-yellow-300">Made with ❤️ by Simran and team</p>
+        </div>
       </div>
     </footer>
   );
