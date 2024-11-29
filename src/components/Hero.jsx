@@ -42,7 +42,7 @@ function Hero() {
           </Link>
           <Link to="/Chat">
             <button className="bg-yellow-300 text-indigo-600 px-8 py-4 font-semibold rounded-full shadow-md hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
-              LETS CHAT
+             Find nearby Restaurents
             </button>
           </Link>
         </div>
