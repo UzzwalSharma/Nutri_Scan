@@ -207,8 +207,7 @@ const NutriScan = () => {
         </div>
       )}
 
-      {/* ToastContainer for displaying toast notifications */}
-      <ToastContainer />
+    
     </div>
   );
 };
