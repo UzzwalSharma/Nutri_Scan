@@ -30,6 +30,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.26.2",
     "react-spinners": "^0.14.1",
+    "react-toastify": "^10.0.6",
     "react-webcam": "^7.2.0",
     "serve": "^14.2.3",
     "socket.io": "^4.8.0",
