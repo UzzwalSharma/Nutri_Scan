@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import { DarkModeProvider } from './components/DarkModeContext';
-import Footer from '/src/components/AppFooter.jsx';
+import Footer from '/src/components/AppFooter';
 import NutriScan from '/src/components/NutriScan';
 
 import Chat from './components/Chat';
