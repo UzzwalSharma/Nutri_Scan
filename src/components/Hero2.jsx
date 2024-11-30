@@ -50,7 +50,7 @@ function Hero2() {
           className={`card bg-white text-black rounded-lg shadow-lg overflow-hidden mx-4 my-4 transform transition-transform duration-300 ${visibleCards[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${visibleCards[0] ? 'animate-fade-in-left' : ''}`}
         >
           <img
-            src="/public/pexels-readymade-3850219.jpg" // Replace with relevant image
+            src="/pexels-readymade-3850219.jpg" // Replace with relevant image
             alt="Scan Your Food"
             className="w-full h-80 object-cover"
           />
@@ -69,7 +69,7 @@ function Hero2() {
           className={`card bg-white text-black rounded-lg shadow-lg overflow-hidden mx-4 my-4 transform transition-transform duration-300 ${visibleCards[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${visibleCards[1] ? 'animate-fade-in-right' : ''}`}
         >
           <img
-            src="/public/pexels-rdne-7947960.jpg" // Replace with relevant image
+            src="/pexels-rdne-7947960.jpg" // Replace with relevant image
             alt="Know Your Health Score"
             className="w-full h-80 object-cover"
           />
@@ -88,7 +88,7 @@ function Hero2() {
           className={`card bg-white text-black rounded-lg shadow-lg overflow-hidden mx-4 my-4 transform transition-transform duration-300 ${visibleCards[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${visibleCards[2] ? 'animate-fade-in-left' : ''}`}
         >
           <img
-            src="/public/pexels-alesiakozik-8155159.jpg" // Replace with relevant image
+            src="/pexels-alesiakozik-8155159.jpg" // Replace with relevant image
             alt="Get Personalized Diet Plan"
             className="w-full h-80 object-cover"
           />
