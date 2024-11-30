@@ -14,7 +14,7 @@ const NutriScan = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_KEY = "4735696ba78d43f68a7542161b4c6252"; // Replace with your actual API key
+  const API_KEY = "724009c2784e4d0d8efb019dfa7070d4"; // Replace with your actual API key
 
   // Handle food search
   const handleSearch = async () => {
@@ -23,8 +23,7 @@ const NutriScan = () => {
     setLoading(true);
     setError(null);
 
-    // Show loading notification
-    toast.info("Loading nutritional data...");
+   
 
     try {
       // Making the API request to search for food
