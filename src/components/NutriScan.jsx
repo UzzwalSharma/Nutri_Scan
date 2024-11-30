@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Make sure the CSS is also imported
+
 
 
 // Register chart.js components
@@ -43,14 +42,14 @@ const NutriScan = () => {
           `https://api.spoonacular.com/food/ingredients/${foodItem.id}/information?amount=100&apiKey=${API_KEY}`
         );
         setNutrition(nutritionResponse.data);
-        toast.success("Nutritional data loaded successfully!");
+    
       } else {
         setError("This food doesnt exist in our db");
-        toast.error("This food doesnt exist in our db.");
+       
       }
     } catch (err) {
       setError("An error occurred while fetching the data.");
-      toast.error("An error occurred while fetching the data.");
+     
     } finally {
       setLoading(false);
     }
