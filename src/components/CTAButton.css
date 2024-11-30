@@ -1,0 +1,40 @@
+/* CTAButton.css */
+.cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF6347; /* Tomato color */
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-button:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+  }
+  
+  .cta-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Space between icon and text */
+    object-fit: cover;
+  }
+  
+  .cta-button:focus {
+    outline: none;
+  }
+  

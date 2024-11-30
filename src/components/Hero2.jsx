@@ -1,17 +1,15 @@
-"use client";
-
 import React, { useEffect, useState, useRef } from 'react';
 import "/src/components/hero2.css";
 
 function Hero2() {
-  const [visibleCards, setVisibleCards] = useState([false, false, false]);
+  const [visibleCards, setVisibleCards] = useState([false, false, false, false]);
   const cardRefs = useRef([]);
 
   useEffect(() => {
     const observerOptions = {
-      root: null, // use the viewport as the root
+      root: null,
       rootMargin: '0px',
-      threshold: 0.85 // trigger when 10% of the card is visible
+      threshold: 0.85
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -20,10 +18,10 @@ function Hero2() {
           const index = Number(entry.target.dataset.index);
           setVisibleCards((prev) => {
             const newVisibleCards = [...prev];
-            newVisibleCards[index] = true; // Show the card
+            newVisibleCards[index] = true;
             return newVisibleCards;
           });
-          observer.unobserve(entry.target); // Stop observing once visible
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
@@ -34,71 +32,70 @@ function Hero2() {
       }
     });
 
-    // Cleanup on component unmount
     return () => {
       observer.disconnect();
     };
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white py-16">
+    <div className="bg-gradient-to-r from-green-400 via-green-500 to-blue-500 text-white py-16">
       <h1 className="text-4xl lg:text-5xl font-extrabold text-center mb-8">
-        Hit Your Healthy Goals in Three Steps
+        Achieve Your Health Goals with NutriScan
       </h1>
       <div className="flex flex-col lg:flex-row justify-center items-center max-w-7xl mx-auto px-4">
-        {/* Card 1 */}
+        {/* Card 1: Real-time Food Scanning */}
         <div
-          ref={(el) => (cardRefs.current[0] = el)} // Reference for Intersection Observer
+          ref={(el) => (cardRefs.current[0] = el)}
           data-index={0}
           className={`card bg-white text-black rounded-lg shadow-lg overflow-hidden mx-4 my-4 transform transition-transform duration-300 ${visibleCards[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${visibleCards[0] ? 'animate-fade-in-left' : ''}`}
         >
           <img
-            src="https://www.myfitnesspal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flearn-what-works-small.95dadf73.png&w=640&q=75"
-            alt="Track Food"
+            src="/public/pexels-readymade-3850219.jpg" // Replace with relevant image
+            alt="Scan Your Food"
             className="w-full h-80 object-cover"
           />
           <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-2">Track Food Intake</h2>
+            <h2 className="text-2xl font-semibold mb-2">Scan to Get Nutritional Insights</h2>
             <p className="text-gray-600">
-              Keep an accurate record of your meals and snacks to maintain your nutrition goals.
+              Snap a photo or upload your food and get an instant nutritional breakdown!
             </p>
           </div>
         </div>
 
-        {/* Card 2 */}
+        {/* Card 2: Health Score */}
         <div
-          ref={(el) => (cardRefs.current[1] = el)} // Reference for Intersection Observer
+          ref={(el) => (cardRefs.current[1] = el)}
           data-index={1}
           className={`card bg-white text-black rounded-lg shadow-lg overflow-hidden mx-4 my-4 transform transition-transform duration-300 ${visibleCards[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${visibleCards[1] ? 'animate-fade-in-right' : ''}`}
         >
           <img
-            src="https://www.myfitnesspal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftrack-food-small.ee639f5f.png&w=640&q=75"
-            alt="Monitor Progress"
+            src="/public/pexels-rdne-7947960.jpg" // Replace with relevant image
+            alt="Know Your Health Score"
             className="w-full h-80 object-cover"
           />
           <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-2">Monitor Your Progress</h2>
+            <h2 className="text-2xl font-semibold mb-2">Know Your Health Score</h2>
             <p className="text-gray-600">
-              Track your weight and other metrics to visualize your journey and celebrate your successes.
+              Track your progress with your personal health score and improve your diet.
             </p>
           </div>
         </div>
 
-        {/* Card 3 */}
+        {/* Card 3: Get Personalized Diet Plans */}
         <div
-          ref={(el) => (cardRefs.current[2] = el)} // Reference for Intersection Observer
+          ref={(el) => (cardRefs.current[2] = el)}
           data-index={2}
           className={`card bg-white text-black rounded-lg shadow-lg overflow-hidden mx-4 my-4 transform transition-transform duration-300 ${visibleCards[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${visibleCards[2] ? 'animate-fade-in-left' : ''}`}
         >
           <img
-            src="https://www.myfitnesspal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchange-your-habits-small.2adda768.png&w=640&q=75"
-            alt="Get Support"
+            src="/public/pexels-alesiakozik-8155159.jpg" // Replace with relevant image
+            alt="Get Personalized Diet Plan"
             className="w-full h-80 object-cover"
           />
           <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-2">Get Support and Motivation</h2>
+            <h2 className="text-2xl font-semibold mb-2">Get Personalized Diet Plans</h2>
             <p className="text-gray-600">
-              Join a community of like-minded individuals and share your experiences for motivation.
+              Based on your preferences, receive weekly meal plans tailored just for you.
             </p>
           </div>
         </div>

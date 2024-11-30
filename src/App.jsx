@@ -5,11 +5,12 @@ import Navbar from './components/Navbar';
 import { DarkModeProvider } from './components/DarkModeContext';
 import Footer from '/src/components/AppFooter.jsx';
 import NutriScan from '/src/components/NutriScan';
-import SkinScanner from './components/SkinScanner';
+
 import Chat from './components/Chat';
 import { SignIn, SignUp, useAuth, SignedOut, UserProfile } from '@clerk/clerk-react';
 import toast, { Toaster } from 'react-hot-toast';
 import "/src/App.css";
+import Healthier from './components/Healthieralt';
 
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
@@ -70,7 +71,7 @@ function App() {
             element={
               <ProtectedRoute>
                 <div className="center-container">
-                  <SkinScanner />
+                  <Healthier />
                 </div>
               </ProtectedRoute>
             }

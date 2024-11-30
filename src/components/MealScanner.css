@@ -251,3 +251,10 @@
 .view-recipe-button:hover {
     background-color: #0056b3;
 }
+
+.reopen{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+

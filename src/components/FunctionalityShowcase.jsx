@@ -1,63 +1,77 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
-const FunctionalityShowcase = () => {
-  const features = [
+const ReviewsSection = () => {
+  const reviews = [
     {
-      title: "Personalized Diet Plans",
-      description: "Receive customized meal plans tailored to your dietary needs and preferences.",
-      icon: "🍏", 
+      name: "John Doe",
+      title: "Health Transformation",
+      review: "NutriScan helped me identify the foods that were contributing to my health issues. After following their personalized meal plan, I feel more energetic and healthier!",
+      image: "https://www.w3schools.com/w3images/avatar6.png",
+      rating: 5,
     },
     {
-      title: "Calorie Tracking",
-      description: "Easily track your daily calorie intake and monitor your nutritional goals.",
-      icon: "📊",
+      name: "Sarah Lee",
+      title: "Amazing Diet Plans",
+      review: "I’ve tried many apps, but NutriScan's personalized recommendations are a game-changer. It’s easy to track my calories and follow a tailored plan.",
+      image: "https://www.w3schools.com/w3images/avatar2.png",
+      rating: 4,
     },
     {
-      title: "Health Insights",
-      description: "Get insights into how different foods affect your body and health.",
-      icon: "🔍", 
+      name: "Mike Smith",
+      title: "Great Insights!",
+      review: "I love how NutriScan provides insights into how food affects my body. It’s like having a personal nutritionist guiding me through my diet journey.",
+      image: "https://www.w3schools.com/w3images/avatar5.png",
+      rating: 5,
     },
     {
-      title: "Disease Prevention",
-      description: "Discover foods that can help prevent diseases based on your body's needs.",
-      icon: "🛡️", 
-    },
-    {
-      title: "Ingredient Substitutes",
-      description: "Find alternatives for ingredients that suit your dietary restrictions.",
-      icon: "🌱", 
-    },
-    {
-      title: "Custom Recommendations",
-      description: "Receive tailored recommendations based on your body study and preferences.",
-      icon: "⭐", 
+      name: "Anna Williams",
+      title: "Helpful and Informative",
+      review: "The ingredient substitute feature helped me a lot when I was looking for gluten-free alternatives. NutriScan is a must-have for anyone conscious about their health.",
+      image: "https://www.w3schools.com/w3images/avatar1.png", 
+      rating: 4,
     },
   ];
 
   return (
-    <section className="py-12 bg-gray-50 dark:bg-gray-800">
+    <section className="py-16 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-orange-500 mb-8">
-          How NutriScan Works
+        <h2 className="text-3xl font-extrabold text-center text-orange-500 mb-8">
+          What Our Users Are Saying
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <motion.div
               key={index}
-              className="p-6 border rounded-lg shadow-md bg-white dark:bg-gray-700 transition-transform duration-300 transform hover:scale-105"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
+              className="relative p-6 border rounded-lg shadow-lg bg-white dark:bg-gray-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
             >
-              <div className="text-4xl mb-4 text-orange-500 text-center">
-                {feature.icon}
+              {/* Review Content */}
+              <div className="flex items-center mb-4">
+                <img
+                  src={review.image}
+                  alt={review.name}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{review.name}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{review.title}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 text-center">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-center mt-2">
-                {feature.description}
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                "{review.review}"
               </p>
-            </div>
+              <div className="flex">
+                {Array.from({ length: review.rating }, (_, i) => (
+                  <span key={i} className="text-yellow-400">★</span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -65,4 +79,4 @@ const FunctionalityShowcase = () => {
   );
 };
 
-export default FunctionalityShowcase;
+export default ReviewsSection;

@@ -1,69 +1,81 @@
-import React, { useEffect } from 'react';
-import { useDarkMode } from './DarkModeContext'; // Import useDarkMode from context
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { useDarkMode } from "./DarkModeContext"; // Import useDarkMode from context
+import { Link } from "react-router-dom";
 
 function Hero() {
   const { isDarkMode } = useDarkMode(); // Access isDarkMode from the context
 
   // Set the body background color based on isDarkMode
   useEffect(() => {
-    document.body.style.backgroundColor = isDarkMode ? '#2D3748' : 'white'; // Change to your desired light background color
+    document.body.style.backgroundColor = isDarkMode
+      ? "#2D3748"
+      : "white"; // Change to your desired light background color
   }, [isDarkMode]);
 
   return (
-    <section
-      className={`min-h-screen flex flex-col lg:flex-row justify-center items-center text-center lg:text-left p-6 home ${
-        isDarkMode ? 'bg-gray-800 text-white' : 'bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 text-black'
+    <motion.section
+      className={`relative min-h-screen flex flex-col justify-center items-center text-center p-6 ${
+        isDarkMode ? "bg-gray-800 text-white" : "text-black"
       }`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
-      {/* Text Section */}
-      <div className="lg:w-1/2">
-        <h1 className="text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
-          Welcome to <span className="text-yellow-300">NutriScan</span>
-        </h1>
-        <p className="text-lg lg:text-xl text-white mb-8 max-w-2xl mx-auto lg:mx-0">
-          Scan your food to get detailed information about its nutritional value, calories, and health benefits. Stay healthy with personalized diet plans!
-        </p>
+      {/* Video Background */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="public/10235156-hd_1616_1080_15fps.mp4" // Replace with your video link
+        autoPlay
+        loop
+        muted
+      ></video>
 
-        {/* Buttons Container */}
-        <div className="flex flex-col lg:flex-row gap-6 justify-center lg:justify-start">
-          {/* "Get Started" Button */}
+      {/* Overlay for better readability */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+
+      {/* Content Section */}
+      <div className="relative z-20 text-white max-w-4xl mx-auto px-4">
+        <motion.h1
+          className="text-5xl lg:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 mb-6"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          Welcome to <span className="text-white">NutriScan</span>
+        </motion.h1>
+        <motion.p
+          className="text-lg lg:text-xl text-white mb-8 leading-relaxed"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        >
+          Unlock the power of nutrition with <strong>NutriScan</strong>. 
+          Scan your meals, discover their nutritional value, and explore
+          personalized diet plans tailored to your health goals. Your journey
+          to a healthier lifestyle begins here!
+        </motion.p>
+
+        {/* CTA Button */}
+        <motion.div
+          className="mt-8"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <Link to="/nutriscan">
-            <button className="bg-yellow-300 text-indigo-600 px-8 py-4 font-semibold rounded-full shadow-md hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+            <motion.button
+              className="bg-yellow-400 text-indigo-800 px-12 py-4 font-bold text-lg rounded-full shadow-lg hover:shadow-2xl hover:bg-yellow-500 hover:text-indigo-900 transform transition duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               Get Started
-            </button>
+            </motion.button>
           </Link>
-
-          {/* "Find Healthy Alternatives" Button */}
-          <Link to="/scanner">
-            <button className="bg-yellow-300 text-indigo-600 px-8 py-4 font-semibold rounded-full shadow-md hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
-              Find Healthy Alternatives
-            </button>
-          </Link>
-          <Link to="/Chat">
-            <button className="bg-yellow-300 text-indigo-600 px-8 py-4 font-semibold rounded-full shadow-md hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
-             Find nearby Restaurents
-            </button>
-          </Link>
-        </div>
-
-        {/* Paragraph for "Find Healthy Alternatives" */}
-        <div className="mt-6">
-          <p className="text-lg lg:text-xl text-white max-w-2xl mx-auto lg:mx-0">
-            Looking for a healthier choice? Use our "Find Healthy Alternatives" feature to discover better options based on your scanned meals. Stay on track with your health goals!
-          </p>
-        </div>
+        </motion.div>
       </div>
-
-      {/* Image Section */}
-      <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center lg:justify-end">
-        <img
-          src="https://i.ibb.co/QmH9VxB/pexels-plann-2999237-4565778.jpg" 
-          alt="Healthy Food"
-          className="w-80 lg:w-96 h-auto rounded-lg shadow-2xl transform transition duration-300 hover:scale-105"
-        />
-      </div>
-    </section>
+    </motion.section>
+    
   );
 }
 
