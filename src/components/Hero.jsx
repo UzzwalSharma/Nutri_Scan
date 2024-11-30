@@ -25,7 +25,7 @@ function Hero() {
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="public/10235156-hd_1616_1080_15fps.mp4" // Replace with your video link
+        src="/10235156-hd_1616_1080_15fps.mp4" // Replace with your video link
         autoPlay
         loop
         muted
@@ -75,7 +75,7 @@ function Hero() {
         </motion.div>
       </div>
     </motion.section>
-    
+
   );
 }
 
