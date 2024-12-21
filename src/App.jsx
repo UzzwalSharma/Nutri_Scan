@@ -115,7 +115,7 @@ function App() {
             }
           />
           <Route
-            path="/uj"
+            path="/Aboutus"
             element={
              <About/>
             }

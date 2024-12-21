@@ -41,7 +41,10 @@ export default function AppNavbar() {
         <FlowbiteNavbar.Link href="/" active className="text-white hover:text-yellow-300 transition duration-300 text-xl">
           Home
         </FlowbiteNavbar.Link>
-        <FlowbiteNavbar.Link href="/uj" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+        {/* <FlowbiteNavbar.Link href="/uj" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+          About
+        </FlowbiteNavbar.Link> */}
+        <FlowbiteNavbar.Link href="/Aboutus" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
           About
         </FlowbiteNavbar.Link>
         <FlowbiteNavbar.Link className="text-white hover:text-yellow-300 transition duration-300 text-xl">
