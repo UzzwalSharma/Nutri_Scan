@@ -115,7 +115,7 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="/uj"
             element={
              <About/>
             }
