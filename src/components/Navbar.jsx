@@ -1,5 +1,8 @@
 import { Link as ScrollLink } from 'react-scroll';
 
+import { Link } from 'react-router-dom';
+
+
 import { Avatar, Dropdown, Navbar as FlowbiteNavbar } from 'flowbite-react';
 import DbBtn from '/src/components/Dbbtn.jsx'; // Import your DbBtn component
 import React from 'react'; 
@@ -44,10 +47,11 @@ export default function AppNavbar() {
         {/* <FlowbiteNavbar.Link href="/uj" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
           About
         </FlowbiteNavbar.Link> */}
-        <FlowbiteNavbar.Link href="/Aboutus" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
-  About
-</FlowbiteNavbar.Link>
-
+ <Link to="/Aboutus" style={{ textDecoration: 'none' }}>
+  <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}>
+    About
+  </button>
+</Link>
         <FlowbiteNavbar.Link className="text-white hover:text-yellow-300 transition duration-300 text-xl">
       <ScrollLink
         to="diet-plan-section"
