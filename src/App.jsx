@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import { DarkModeProvider } from './components/DarkModeContext';
 import Footer from '/src/components/AppFooter';
 import NutriScan from '/src/components/NutriScan';
-
+import ComingSoon from './components/Comingsoon';
 import Chat from './components/Chat';
 import { SignIn, SignUp, useAuth, SignedOut, UserProfile } from '@clerk/clerk-react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -101,6 +101,14 @@ function App() {
             element={
    
                 <Skin />
+            
+            }
+          />
+          <Route
+            path="/Coming"
+            element={
+   
+                <ComingSoon />
             
             }
           />

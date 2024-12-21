@@ -6,6 +6,7 @@ import FeaturesCarousel from "./FeaturesCarousel";
 import Healthier from "./Healthieralt";
 import Restaurentbtn from "/src/components/Restaurentcta";
 import Skinbtn from "/src/components/Skinbtn";
+import ComingSoon from "./Comingsoon";
 function Home() {
   return (
     <div className="bg-gray-100">
@@ -62,7 +63,12 @@ function Home() {
           <Hero2 />
         </div>
       </section>
-
+      <section id="functionality-showcase" className="py-12 bg-gray-50">
+        <div className="container mx-auto px-6">
+         
+        <ComingSoon/>
+        </div>
+      </section>
       {/* Functionality Showcase Section */}
       <section id="functionality-showcase" className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
@@ -70,7 +76,9 @@ function Home() {
           <FunctionalityShowcase />
         </div>
       </section>
+    
       
+     
      
     </div>
   );
