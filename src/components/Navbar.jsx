@@ -47,8 +47,8 @@ export default function AppNavbar() {
         {/* <FlowbiteNavbar.Link href="/uj" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
           About
         </FlowbiteNavbar.Link> */}
- <Link to="/Aboutus" style={{ textDecoration: 'none' }}>
-  <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}>
+ <Link to="/Aboutus" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+  <button >
     About
   </button>
 </Link>
