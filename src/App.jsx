@@ -12,6 +12,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import "/src/App.css";
 import Healthier from './components/Healthieralt';
 import Skin from "./components/Skin"
+import About from "./components/About"
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
   const [redirect, setRedirect] = useState(false); // State to handle redirect
@@ -115,10 +116,7 @@ function App() {
           <Route
             path="/about"
             element={
-              <div className="center-container">
-                <h1>About NutriScan</h1>
-                <p>This is a brief description about the NutriScan project.</p>
-              </div>
+             <About/>
             }
           />
          

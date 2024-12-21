@@ -57,14 +57,17 @@ function Home() {
           <Skinbtn />
         </div>
       </section>
-
+     
       {/* Additional Hero Section */}
       <section id="additional-hero" className="py-12 bg-white">
         <div className="container mx-auto px-6">
           <Hero2 />
         </div>
       </section>
+      <section id="functionality-showcase" className="py-12 bg-gray-300">
+      <div className="container mx-auto px-6">
       <Diet/> 
+      </div> </section>
       <section id="functionality-showcase" className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
          
