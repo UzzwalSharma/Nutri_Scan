@@ -88,136 +88,156 @@ const DietPlanComponent = () => {
 
   return (
     <div style={{ padding: '30px', textAlign: 'center' }} id="diet-plan-section">
-      {loading && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            zIndex: 1000,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        {/* Left side: Form */}
+        <div style={{ flex: 1, marginRight: '20px' }}>
+          {loading && (
+            <div
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                zIndex: 1000,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <img
+                src="/nutrition_15578684.gif"
+                alt="Loading..."
+                style={{
+                  width: '300px',
+                  height: '300px',
+                  borderRadius: '10%',
+                }}
+              />
+            </div>
+          )}
+
+          <Typography variant="h4" gutterBottom style={{ marginBottom: '20px', color: '#4CAF50' }}>
+            Personalized Diet Plan Generator
+          </Typography>
+
+          {/* Token Display */}
+          <div style={{ marginBottom: '20px' }}>
+            <Typography
+              variant="subtitle1"
+              style={{
+                color: '#ff5722',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                marginRight: '10px',
+              }}
+            >
+              Tokens Remaining: 
+            </Typography>
+            <Tooltip title="You can generate up to 3 diet plans. Tokens will reset periodically." arrow>
+              <span
+                style={{
+                  backgroundColor: tokens <= 0 ? '#FFEBEE' : '#C8E6C9',
+                  color: tokens <= 0 ? '#D32F2F' : '#388E3C',
+                  padding: '10px 20px',
+                  borderRadius: '50px',
+                  fontWeight: 'bold',
+                }}
+              >
+                {tokens}
+              </span>
+            </Tooltip>
+            {tokens === 1 && (
+              <div
+                style={{
+                  marginTop: '10px',
+                  color: '#D32F2F',
+                  display: 'flex',
+                  alignItems: 'center',
+                  fontWeight: 'bold',
+                }}
+              >
+                <FaExclamationTriangle style={{ marginRight: '8px' }} />
+                <span>You have only 1 token left!</span>
+              </div>
+            )}
+            {tokens <= 0 && (
+              <div
+                style={{
+                  marginTop: '10px',
+                  color: '#D32F2F',
+                  display: 'flex',
+                  alignItems: 'center',
+                  fontWeight: 'bold',
+                }}
+              >
+                <FaExclamationTriangle style={{ marginRight: '8px' }} />
+                <span>You've used all your tokens. Please come back later.</span>
+              </div>
+            )}
+          </div>
+
+          <Card style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+            <CardContent>
+              <form>
+                <Grid container spacing={3}>
+                  {[{ label: 'Name', name: 'name', type: 'text' },
+                    { label: 'Age', name: 'age', type: 'number' },
+                    { label: 'Weight (kg)', name: 'weight', type: 'number' },
+                    { label: 'Height (ft)', name: 'height', type: 'number' },
+                    { label: 'Skin Type', name: 'skinType', type: 'text', placeholder: 'e.g., Oily, Dry, Sensitive, Aging' },
+                    { label: 'Dietary Preferences', name: 'dietaryPreferences', type: 'text', placeholder: 'e.g., Vegan, Gluten-Free' },
+                  ].map((field, index) => (
+                    <Grid item xs={12} sm={6} key={index}>
+                      <TextField
+                        label={field.label}
+                        name={field.name}
+                        type={field.type}
+                        placeholder={field.placeholder || ''}
+                        value={formData[field.name]}
+                        onChange={handleInputChange}
+                        fullWidth
+                        variant="outlined"
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+                <Button
+                  variant="contained"
+                  onClick={handleGenerateDietPlan}
+                  disabled={loading || tokens <= 0}
+                  style={{
+                    backgroundColor: tokens > 0 ? '#4CAF50' : '#9E9E9E',
+                    color: 'white',
+                    marginTop: '20px',
+                    padding: '10px 20px',
+                    fontSize: '16px',
+                  }}
+                  fullWidth
+                >
+                  {tokens > 0 ? 'Generate Diet Plan' : 'No Tokens Left'}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Right side: Mockup Image */}
+        <div style={{ flex: 1 }}>
           <img
-            src="/nutrition_15578684.gif"
-            alt="Loading..."
+            src="/cookbook_12817474.gif" // Replace with the actual path to your mockup image
+            alt="Diet Plan Mockup"
             style={{
-              width: '300px',
-              height: '300px',
-              borderRadius: '10%',
+              width: '100%',
+              height: 'auto',
+              maxWidth: '500px',
+              objectFit: 'cover',
+              borderRadius: '10px',
             }}
           />
         </div>
-      )}
-
-      <Typography variant="h4" gutterBottom style={{ marginBottom: '20px', color: '#4CAF50' }}>
-        Personalized Diet Plan Generator
-      </Typography>
-
-      {/* Token Display */}
-      <div style={{ marginBottom: '20px' }}>
-        <Typography
-          variant="subtitle1"
-          style={{
-            color: '#ff5722',
-            fontWeight: 'bold',
-            display: 'inline-block',
-            marginRight: '10px',
-          }}
-        >
-          Tokens Remaining: 
-        </Typography>
-        <Tooltip title="You can generate up to 3 diet plans. Tokens will reset periodically." arrow>
-          <span
-            style={{
-              backgroundColor: tokens <= 0 ? '#FFEBEE' : '#C8E6C9',
-              color: tokens <= 0 ? '#D32F2F' : '#388E3C',
-              padding: '10px 20px',
-              borderRadius: '50px',
-              fontWeight: 'bold',
-            }}
-          >
-            {tokens}
-          </span>
-        </Tooltip>
-        {tokens === 1 && (
-          <div
-            style={{
-              marginTop: '10px',
-              color: '#D32F2F',
-              display: 'flex',
-              alignItems: 'center',
-              fontWeight: 'bold',
-            }}
-          >
-            <FaExclamationTriangle style={{ marginRight: '8px' }} />
-            <span>You have only 1 token left!</span>
-          </div>
-        )}
-        {tokens <= 0 && (
-          <div
-            style={{
-              marginTop: '10px',
-              color: '#D32F2F',
-              display: 'flex',
-              alignItems: 'center',
-              fontWeight: 'bold',
-            }}
-          >
-            <FaExclamationTriangle style={{ marginRight: '8px' }} />
-            <span>You've used all your tokens. Please come back later.</span>
-          </div>
-        )}
       </div>
-
-      <Card style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-        <CardContent>
-          <form>
-            <Grid container spacing={3}>
-              {[{ label: 'Name', name: 'name', type: 'text' },
-                { label: 'Age', name: 'age', type: 'number' },
-                { label: 'Weight (kg)', name: 'weight', type: 'number' },
-                { label: 'Height (ft)', name: 'height', type: 'number' },
-                { label: 'Skin Type', name: 'skinType', type: 'text', placeholder: 'e.g., Oily, Dry, Sensitive, Aging' },
-                { label: 'Dietary Preferences', name: 'dietaryPreferences', type: 'text', placeholder: 'e.g., Vegan, Gluten-Free' },
-              ].map((field, index) => (
-                <Grid item xs={12} sm={6} key={index}>
-                  <TextField
-                    label={field.label}
-                    name={field.name}
-                    type={field.type}
-                    placeholder={field.placeholder || ''}
-                    value={formData[field.name]}
-                    onChange={handleInputChange}
-                    fullWidth
-                    variant="outlined"
-                  />
-                </Grid>
-              ))}
-            </Grid>
-            <Button
-              variant="contained"
-              onClick={handleGenerateDietPlan}
-              disabled={loading || tokens <= 0}
-              style={{
-                backgroundColor: tokens > 0 ? '#4CAF50' : '#9E9E9E',
-                color: 'white',
-                marginTop: '20px',
-                padding: '10px 20px',
-                fontSize: '16px',
-              }}
-              fullWidth
-            >
-              {tokens > 0 ? 'Generate Diet Plan' : 'No Tokens Left'}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
 
       {dietPlan && (
         <div style={{ marginTop: '30px' }}>
