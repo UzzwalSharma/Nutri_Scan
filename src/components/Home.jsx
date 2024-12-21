@@ -5,7 +5,7 @@ import FunctionalityShowcase from "./FunctionalityShowcase";
 import FeaturesCarousel from "./FeaturesCarousel";
 import Healthier from "./Healthieralt";
 import Restaurentbtn from "/src/components/Restaurentcta";
-
+import Skinbtn from "/src/components/Skinbtn";
 function Home() {
   return (
     <div className="bg-gray-100">
@@ -33,7 +33,7 @@ function Home() {
           <Healthier />
         </div>
       </section>
-
+     
       {/* Restaurant CTA Button Section */}
       <section
         id="restaurant-cta"
@@ -47,6 +47,12 @@ function Home() {
             Discover nearby restaurants based on your location and preferences. Whether you're craving something specific or looking for new dining experiences, we've got you covered!
           </p>
           <Restaurentbtn />
+        </div>
+      </section>
+      <section id="functionality-showcase" className="py-12 bg-gray-300">
+        <div className="container mx-auto px-6">
+         
+          <Skinbtn />
         </div>
       </section>
 
@@ -64,6 +70,7 @@ function Home() {
           <FunctionalityShowcase />
         </div>
       </section>
+      
      
     </div>
   );

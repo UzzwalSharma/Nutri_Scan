@@ -11,7 +11,7 @@ import { SignIn, SignUp, useAuth, SignedOut, UserProfile } from '@clerk/clerk-re
 import toast, { Toaster } from 'react-hot-toast';
 import "/src/App.css";
 import Healthier from './components/Healthieralt';
-
+import Skin from "./components/Skin"
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
   const [redirect, setRedirect] = useState(false); // State to handle redirect
@@ -96,7 +96,24 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="about"/>
+          <Route
+            path="/skin"
+            element={
+   
+                <Skin />
+            
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <div className="center-container">
+                <h1>About NutriScan</h1>
+                <p>This is a brief description about the NutriScan project.</p>
+              </div>
+            }
+          />
+         
         </Routes>
 
         {/* Footer */}
