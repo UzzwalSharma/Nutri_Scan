@@ -45,8 +45,9 @@ export default function AppNavbar() {
           About
         </FlowbiteNavbar.Link> */}
         <FlowbiteNavbar.Link href="/Aboutus" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
-          About
-        </FlowbiteNavbar.Link>
+  About
+</FlowbiteNavbar.Link>
+
         <FlowbiteNavbar.Link className="text-white hover:text-yellow-300 transition duration-300 text-xl">
       <ScrollLink
         to="diet-plan-section"

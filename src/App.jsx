@@ -12,7 +12,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import "/src/App.css";
 import Healthier from './components/Healthieralt';
 import Skin from "./components/Skin"
-import About from "/src/uj.jsx"
+import About from './components/About'; // Adjust based on your directory structure
+
 // import uj from "/src/uj.jsx"
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
