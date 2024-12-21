@@ -1,4 +1,5 @@
-// src/components/AppNavbar.jsx
+import { Link as ScrollLink } from 'react-scroll';
+
 import { Avatar, Dropdown, Navbar as FlowbiteNavbar } from 'flowbite-react';
 import DbBtn from '/src/components/Dbbtn.jsx'; // Import your DbBtn component
 import React from 'react'; 
@@ -43,9 +44,15 @@ export default function AppNavbar() {
         <FlowbiteNavbar.Link href="/about" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
           About
         </FlowbiteNavbar.Link>
-        <FlowbiteNavbar.Link href="#services" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
-          Services
-        </FlowbiteNavbar.Link>
+        <FlowbiteNavbar.Link className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+      <ScrollLink
+        to="diet-plan-section"
+        smooth={true}
+        duration={500}
+      >
+        Diet Planner
+      </ScrollLink>
+    </FlowbiteNavbar.Link>
         <FlowbiteNavbar.Link href="#pricing" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
         {isSignedIn ? (
          
