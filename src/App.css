@@ -25,7 +25,7 @@
     color: white; /* Optional: Set text color to white */
     font-family: 'Arial', sans-serif;
     align-items: center;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     /* height: 100vh; */
   }

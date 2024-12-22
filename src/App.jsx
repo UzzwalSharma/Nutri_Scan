@@ -47,7 +47,7 @@ function App() {
     // Simulate a delay for loading (e.g., fetching data or preparing resources)
     const timer = setTimeout(() => {
       setIsLoading(false); // Hide loader after 3 seconds
-    }, 3000);
+    }, 4000);
 
     return () => clearTimeout(timer); // Cleanup the timer
   }, []);

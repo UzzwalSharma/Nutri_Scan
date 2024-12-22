@@ -6,7 +6,7 @@ const Loader = () => {
     <StyledWrapper>
       <div className="hacker-loader">
         <div className="loader-text">
-          <span data-text="Initializing..." className="text-glitch">Initializing...</span>
+          <span data-text="Initializing Nutriscan..." className="text-glitch">Initializing Nutriscan...</span>
         </div>
         <div className="loader-bar">
           <div className="bar-fill" />
@@ -19,28 +19,34 @@ const Loader = () => {
           <div className="particle" />
           <div className="particle" />
         </div>
+       
       </div>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+
   .hacker-loader {
     position: relative;
     width: 24em;
-    height: 6em;
+    height: 8em;
     background-color: #0a0a0a;
     border: 0.2em solid #00ff00;
     border-radius: 0.5em;
     padding: 1em;
     overflow: hidden;
-    box-shadow: 0 0 1em rgba(0, 255, 0, 0.3);
-    
+    box-shadow: 0 0 1.5em rgba(0, 255, 0, 0.5), 0 0 0.5em rgba(0, 255, 0, 0.2);
   }
 
   .loader-text {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 
   .text-glitch {
@@ -49,6 +55,7 @@ const StyledWrapper = styled.div`
     font-size: 1.5em;
     position: relative;
     display: inline-block;
+    text-shadow: 0 0 0.2em #00ff00, 0 0 0.5em #00ff00;
   }
 
   .text-glitch::before,
@@ -82,6 +89,7 @@ const StyledWrapper = styled.div`
     border-radius: 0.25em;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 0.5em #00ff00 inset;
   }
 
   .bar-fill {
@@ -90,7 +98,7 @@ const StyledWrapper = styled.div`
     left: 0;
     width: 0;
     height: 100%;
-    background-color: #00ff00;
+    background: linear-gradient(90deg, #00ff00, #003300);
     animation: bar-fill-animation 2s infinite ease-in-out;
   }
 
@@ -163,62 +171,8 @@ const StyledWrapper = styled.div`
     0% {
       clip: rect(42px, 9999px, 44px, 0);
     }
-    5% {
-      clip: rect(12px, 9999px, 59px, 0);
-    }
-    10% {
-      clip: rect(48px, 9999px, 29px, 0);
-    }
-    15.0% {
-      clip: rect(42px, 9999px, 73px, 0);
-    }
-    20% {
-      clip: rect(63px, 9999px, 27px, 0);
-    }
-    25% {
-      clip: rect(34px, 9999px, 55px, 0);
-    }
-    30.0% {
-      clip: rect(86px, 9999px, 73px, 0);
-    }
-    35% {
-      clip: rect(20px, 9999px, 20px, 0);
-    }
-    40% {
-      clip: rect(26px, 9999px, 60px, 0);
-    }
-    45% {
-      clip: rect(25px, 9999px, 66px, 0);
-    }
     50% {
-      clip: rect(57px, 9999px, 98px, 0);
-    }
-    55.0% {
-      clip: rect(5px, 9999px, 46px, 0);
-    }
-    60.0% {
-      clip: rect(82px, 9999px, 31px, 0);
-    }
-    65% {
-      clip: rect(54px, 9999px, 27px, 0);
-    }
-    70% {
-      clip: rect(28px, 9999px, 99px, 0);
-    }
-    75% {
-      clip: rect(45px, 9999px, 69px, 0);
-    }
-    80% {
-      clip: rect(23px, 9999px, 85px, 0);
-    }
-    85.0% {
-      clip: rect(54px, 9999px, 84px, 0);
-    }
-    90% {
-      clip: rect(45px, 9999px, 47px, 0);
-    }
-    95% {
-      clip: rect(37px, 9999px, 20px, 0);
+      clip: rect(20px, 9999px, 85px, 0);
     }
     100% {
       clip: rect(4px, 9999px, 91px, 0);
@@ -256,6 +210,7 @@ const StyledWrapper = styled.div`
       opacity: 0;
       transform: translate(2em, 2em);
     }
-  }`;
+  }
+`;
 
 export default Loader;
