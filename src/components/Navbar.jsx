@@ -122,16 +122,23 @@ export default function AppNavbar() {
         </motion.div>
 
         <motion.div variants={menuItemVariants} initial="hidden" animate="visible">
+          <Link to="/pricing" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+          Pricing
+          </Link>
+        </motion.div>
+
+        {/* <motion.div variants={menuItemVariants} initial="hidden" animate="visible">
           <FlowbiteNavbar.Link href="pricing" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
             Pricing
           </FlowbiteNavbar.Link>
-        </motion.div>
+        </motion.div> */}
 
         {/* Manage Profile Link */}
+       
         <motion.div variants={menuItemVariants} initial="hidden" animate="visible">
-          <FlowbiteNavbar.Link href="/profile" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
-            Manage Profile
-          </FlowbiteNavbar.Link>
+          <Link to="/profile" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+          Manage Profile
+          </Link>
         </motion.div>
       </FlowbiteNavbar.Collapse>
     </FlowbiteNavbar>
