@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Grid,
@@ -86,11 +87,7 @@ const DietPlanComponent = () => {
     }
   };
 
-   // Handle "View Plans" button click
-   const handleViewPlans = () => {
-    // For now, we are redirecting to a placeholder /pricing page
-    window.location.href = '/pricing'; // Or replace with the appropriate route to view pricing plans
-  };
+ 
 
   return (
     <div style={{ padding: '30px', textAlign: 'center' }} id="diet-plan-section">
@@ -184,21 +181,21 @@ const DietPlanComponent = () => {
             )}
             {/* View Plan Button */}
             <Button
-              variant="outlined"
-              onClick={handleViewPlans}
-              style={{
-                marginLeft: '20px',
-                padding: '10px 15px',
-                borderRadius: '25px',
-                borderColor: '#388E3C',
-                color: '#388E3C',
-                fontWeight: 'bold',
-                // display: tokens > 0 && dietPlan ? 'inline-flex' : 'none',
-              }}
-              startIcon={<FaEye />}
-            >
-              View Plan
-            </Button>
+  variant="outlined"
+  component={Link} // Makes the button behave as a link
+  to="/pricing" // The route to navigate to
+  style={{
+    marginLeft: '20px',
+    padding: '10px 15px',
+    borderRadius: '25px',
+    borderColor: '#388E3C',
+    color: '#388E3C',
+    fontWeight: 'bold',
+  }}
+  startIcon={<FaEye />}
+>
+  View Plan
+</Button>
           </div>
 
           <Card style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
