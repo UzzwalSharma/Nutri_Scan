@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify'; // Correct import (only once)
 import 'react-toastify/dist/ReactToastify.css';
 
 import {
@@ -15,8 +15,6 @@ import {
 import { FaExclamationTriangle } from 'react-icons/fa'; // For icons
 import { chatSession } from '/src/components/gemini.js';
 import { motion } from 'framer-motion'; // Import Framer Motion
-import { toast, ToastContainer } from 'react-toastify'; // Import React Toastify
-import 'react-toastify/dist/ReactToastify.css';
 
 const IngredientSubstituteComponent = () => {
   const [formData, setFormData] = useState({
