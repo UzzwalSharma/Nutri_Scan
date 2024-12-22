@@ -18,4 +18,14 @@
     align-items: center;     /* Vertically center */
     background-color: aqua;
   }
-  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Set body background to black */
+    color: white; /* Optional: Set text color to white */
+    font-family: 'Arial', sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* height: 100vh; */
+  }

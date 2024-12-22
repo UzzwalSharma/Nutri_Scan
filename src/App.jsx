@@ -13,7 +13,7 @@ import "/src/App.css";
 import Healthier from './components/Healthieralt';
 import Skin from "./components/Skin"
 import About from './components/About'; // Adjust based on your directory structure
-
+import Loader from "./components/Loader"
 // import uj from "/src/uj.jsx"
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
@@ -41,6 +41,21 @@ function ProtectedRoute({ children }) {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true); // State to track loading status
+
+  useEffect(() => {
+    // Simulate a delay for loading (e.g., fetching data or preparing resources)
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Hide loader after 3 seconds
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
+
+  if (isLoading) {
+    // Render only the loader while loading
+    return <Loader />;
+  }
   return (
     <DarkModeProvider>
       <Router>
