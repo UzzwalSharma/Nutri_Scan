@@ -8,6 +8,7 @@ import Restaurentbtn from "/src/components/Restaurentcta";
 import Skinbtn from "/src/components/Skinbtn";
 import ComingSoon from "./Comingsoon";
 import Diet from "/src/components/Diet"
+import IngredientSubstituteFinder from "../Ingredientsubstitue";
 function Home() {
   return (
     <div className="bg-gray-100">
@@ -51,7 +52,7 @@ function Home() {
           <Restaurentbtn />
         </div>
       </section>
-      <section id="functionality-showcase" className="py-12 bg-gray-300">
+      <section id="functionality-showcase" className="py-12 bg-gray-400">
         <div className="container mx-auto px-6">
          
           <Skinbtn />
@@ -64,6 +65,12 @@ function Home() {
           <Hero2 />
         </div>
       </section>
+     
+      <section id="functionality-showcase" className="py-12 bg-gray-400">
+      <div className="container mx-auto px-6">
+      <IngredientSubstituteFinder/>
+      </div> </section>
+
       <section id="functionality-showcase" className="py-12 bg-gray-300">
       <div className="container mx-auto px-6">
       <Diet/> 
