@@ -12,7 +12,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import { chatSession } from '/src/components/gemini.js';
 import { FaLeaf } from 'react-icons/fa';
-import { FaExclamationTriangle } from 'react-icons/fa'; // For warning icon
+import { FaExclamationTriangle, FaEye } from 'react-icons/fa'; // Added eye icon for "View Plan"
 
 const DietPlanComponent = () => {
   const [formData, setFormData] = useState({
@@ -86,6 +86,12 @@ const DietPlanComponent = () => {
     }
   };
 
+   // Handle "View Plans" button click
+   const handleViewPlans = () => {
+    // For now, we are redirecting to a placeholder /pricing page
+    window.location.href = '/pricing'; // Or replace with the appropriate route to view pricing plans
+  };
+
   return (
     <div style={{ padding: '30px', textAlign: 'center' }} id="diet-plan-section">
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -122,8 +128,8 @@ const DietPlanComponent = () => {
             Personalized Diet Plan Generator
           </Typography>
 
-          {/* Token Display */}
-          <div style={{ marginBottom: '20px' }}>
+          {/* Token Display with View Plan Button */}
+          <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
             <Typography
               variant="subtitle1"
               style={{
@@ -176,6 +182,23 @@ const DietPlanComponent = () => {
                 <span>You've used all your tokens. Please come back later.</span>
               </div>
             )}
+            {/* View Plan Button */}
+            <Button
+              variant="outlined"
+              onClick={handleViewPlans}
+              style={{
+                marginLeft: '20px',
+                padding: '10px 15px',
+                borderRadius: '25px',
+                borderColor: '#388E3C',
+                color: '#388E3C',
+                fontWeight: 'bold',
+                // display: tokens > 0 && dietPlan ? 'inline-flex' : 'none',
+              }}
+              startIcon={<FaEye />}
+            >
+              View Plan
+            </Button>
           </div>
 
           <Card style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
@@ -208,11 +231,19 @@ const DietPlanComponent = () => {
                   onClick={handleGenerateDietPlan}
                   disabled={loading || tokens <= 0}
                   style={{
-                    backgroundColor: tokens > 0 ? '#4CAF50' : '#9E9E9E',
+                    background: 'linear-gradient(45deg, #4CAF50, #66BB6A)', // Gradient background
                     color: 'white',
                     marginTop: '20px',
-                    padding: '10px 20px',
+                    padding: '12px 24px',
                     fontSize: '16px',
+                    fontWeight: 'bold',
+                    borderRadius: '25px', // Rounded corners
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #66BB6A, #4CAF50)',
+                      transform: 'scale(1.05)',
+                    },
                   }}
                   fullWidth
                 >

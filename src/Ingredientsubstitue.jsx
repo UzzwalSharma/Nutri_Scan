@@ -12,10 +12,10 @@ import {
   Tooltip,
   Box,
 } from '@mui/material';
-import { FaExclamationTriangle } from 'react-icons/fa'; // For icons
+
 import { chatSession } from '/src/components/gemini.js';
 import { motion } from 'framer-motion'; // Import Framer Motion
-
+import { FaExclamationTriangle, FaEye } from 'react-icons/fa'; 
 const IngredientSubstituteComponent = () => {
   const [formData, setFormData] = useState({
     ingredient: '',
@@ -76,6 +76,12 @@ const IngredientSubstituteComponent = () => {
     }
   };
 
+  // Handle "View Plans" button click
+  const handleViewPlans = () => {
+    // For now, we are redirecting to a placeholder /pricing page
+    window.location.href = '/pricing'; // Or replace with the appropriate route to view pricing plans
+  };
+
   return (
     <div style={{ padding: '30px', textAlign: 'center', backgroundColor: '#ffffff' }} id="ingredient-substitute-section">
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop closeOnClick pauseOnFocusLoss draggable pauseOnHover />
@@ -114,8 +120,8 @@ const IngredientSubstituteComponent = () => {
             Ingredient Substitute Finder
           </Typography>
 
-          {/* Token Display */}
-          <div style={{ marginBottom: '20px' }}>
+          {/* Token Display with View Plans Button */}
+          <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
             <Typography
               variant="subtitle1"
               style={{
@@ -168,6 +174,24 @@ const IngredientSubstituteComponent = () => {
                 <span>You've used all your tokens. Please try again later.</span>
               </div>
             )}
+
+            {/* Small "View Plans" button next to token count */}
+           <Button
+                        variant="outlined"
+                        onClick={handleViewPlans}
+                        style={{
+                          marginLeft: '20px',
+                          padding: '10px 15px',
+                          borderRadius: '25px',
+                          borderColor: '#388E3C',
+                          color: '#388E3C',
+                          fontWeight: 'bold',
+                          // display: tokens > 0 && dietPlan ? 'inline-flex' : 'none',
+                        }}
+                        startIcon={<FaEye />}
+                      >
+                        View Plan
+                      </Button>
           </div>
 
           <Card style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>

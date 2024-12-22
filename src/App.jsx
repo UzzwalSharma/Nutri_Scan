@@ -14,7 +14,7 @@ import Healthier from './components/Healthieralt';
 import Skin from "./components/Skin"
 import About from './components/About'; // Adjust based on your directory structure
 import Loader from "./components/Loader"
-// import uj from "/src/uj.jsx"
+import PricingComponent from './components/Pricing';
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
   const [redirect, setRedirect] = useState(false); // State to handle redirect
@@ -119,6 +119,14 @@ function App() {
             element={
    
                 <Skin />
+            
+            }
+          />
+          <Route
+            path="/pricing"
+            element={
+   
+                <PricingComponent />
             
             }
           />

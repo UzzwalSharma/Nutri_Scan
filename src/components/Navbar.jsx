@@ -122,7 +122,7 @@ export default function AppNavbar() {
         </motion.div>
 
         <motion.div variants={menuItemVariants} initial="hidden" animate="visible">
-          <FlowbiteNavbar.Link href="#pricing" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
+          <FlowbiteNavbar.Link href="pricing" className="text-white hover:text-yellow-300 transition duration-300 text-xl">
             Pricing
           </FlowbiteNavbar.Link>
         </motion.div>
