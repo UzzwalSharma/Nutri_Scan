@@ -8,7 +8,7 @@ const SkinHealthComponent = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const SPOONACULAR_API_KEY = "fcb96ae848b04fc2bab98b432ed7b287"; // Your Spoonacular API key
+  const SPOONACULAR_API_KEY = "525463f6aa0542418df4afc76133543a"; // Your Spoonacular API key
   const UNSPLASH_ACCESS_KEY = "9lR3w1H9gurziMXBUIp4aso9nBK12PlxrKdtEfIx960"; // Your Unsplash API key
 
   // Handle skin type change

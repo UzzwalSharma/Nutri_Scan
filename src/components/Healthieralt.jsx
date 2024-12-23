@@ -14,7 +14,7 @@ const Healthier = () => {
         e.preventDefault();
         setLoading(true);
 
-        const API_KEY = "fcb96ae848b04fc2bab98b432ed7b287"; // Replace with your Spoonacular API key
+        const API_KEY = "525463f6aa0542418df4afc76133543a"; // Replace with your Spoonacular API key
 
         try {
             const response = await axios.get(
