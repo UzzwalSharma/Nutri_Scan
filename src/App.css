@@ -21,7 +21,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: #000; /* Set body background to black */
+    /* background-color: #000; Set body background to black */
     /* color: white; Optional: Set text color to white */
     font-family: 'Arial', sans-serif;
     align-items: center;

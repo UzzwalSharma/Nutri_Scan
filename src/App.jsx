@@ -15,6 +15,7 @@ import Skin from "./components/Skin"
 import About from './components/About'; // Adjust based on your directory structure
 import Loader from "./components/Loader"
 import PricingComponent from './components/Pricing';
+import FoodExpirationTrackerComponent from './components/FoodExp';
 function ProtectedRoute({ children }) {
   const { isSignedIn } = useAuth();
   const [redirect, setRedirect] = useState(false); // State to handle redirect
@@ -142,6 +143,12 @@ function App() {
             path="/Aboutus"
             element={
              <About/>
+            }
+          />
+          <Route
+            path="/Foodexp"
+            element={
+             <FoodExpirationTrackerComponent/>
             }
           />
          

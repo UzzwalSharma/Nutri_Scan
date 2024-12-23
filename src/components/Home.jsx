@@ -9,6 +9,7 @@ import Skinbtn from "/src/components/Skinbtn";
 import ComingSoon from "./Comingsoon";
 import Diet from "/src/components/Diet"
 import IngredientSubstituteFinder from "../Ingredientsubstitue";
+import Feedback from "/src/components/Feedback.jsx"
 function Home() {
   return (
     <div className="bg-gray-100">
@@ -75,6 +76,7 @@ function Home() {
       <div className="container mx-auto px-6">
       <Diet/> 
       </div> </section>
+      <Feedback/>
       <section id="functionality-showcase" className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
          
