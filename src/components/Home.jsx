@@ -10,6 +10,7 @@ import ComingSoon from "./Comingsoon";
 import Diet from "/src/components/Diet"
 import IngredientSubstituteFinder from "../Ingredientsubstitue";
 import Feedback from "/src/components/Feedback.jsx"
+import CircularChart from "./Tree";
 function Home() {
   return (
     <div className="bg-gray-100">
@@ -80,9 +81,16 @@ function Home() {
       <section id="functionality-showcase" className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
          
+        <CircularChart/>
+        </div>
+      </section>
+      <section id="functionality-showcase" className="py-12 bg-gray-50">
+        <div className="container mx-auto px-6">
+         
         <ComingSoon/>
         </div>
       </section>
+    
   
       {/* Functionality Showcase Section */}
       <section id="functionality-showcase" className="py-12 bg-gray-50">
